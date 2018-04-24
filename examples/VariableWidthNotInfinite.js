@@ -14,113 +14,24 @@ export default class VariableWidthNotInfinite extends Component {
       rows: 1,
       outerEdgeLimit: true
     };
+
+    let sliderContent = [];
+    const slideNumber = Math.floor(Math.random() * (50 - 10 + 1) + 10);
+    const Slide = () => {
+      let randomWidth = Math.floor(Math.random() * (300 - 100 + 1) + 100);
+      return (
+        <div key={randomWidth} style={{ width: randomWidth }}>
+          <p>{randomWidth}</p>
+        </div>
+      );
+    };
+    for (let i = 0; i < slideNumber; i++) {
+      sliderContent.push(Slide());
+    }
     return (
       <div>
         <h2>Variable width Not infinite</h2>
-        <Slider {...settings}>
-          <div style={{ width: 400 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 100 }}>
-            <p>100</p>
-          </div>
-          <div style={{ width: 400 }}>
-            <p>1000</p>
-          </div>
-        </Slider>
+        <Slider {...settings}>{sliderContent}</Slider>
       </div>
     );
   }
