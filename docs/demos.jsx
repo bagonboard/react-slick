@@ -18,6 +18,7 @@ import AutoPlayMethods from '../examples/AutoPlayMethods'
 import PauseOnHover from '../examples/PauseOnHover'
 import Rtl from '../examples/Rtl'
 import VariableWidth from '../examples/VariableWidth'
+import VariableWidthNotInfinite from '../examples/VariableWidthNotInfinite'
 import AdaptiveHeight from '../examples/AdaptiveHeight'
 import LazyLoad from '../examples/LazyLoad'
 import Fade from '../examples/Fade'
@@ -51,6 +52,7 @@ export default class App extends React.Component {
         <PauseOnHover />
         <Rtl />
         <VariableWidth />
+        <VariableWidthNotInfinite />
         <AdaptiveHeight />
         <LazyLoad />
         <Fade />

@@ -671,7 +671,8 @@ export const getTrackLeft = spec => {
     variableWidth,
     slideHeight,
     fade,
-    vertical
+    vertical,
+    outerEdgeLimit
   } = spec;
 
   var slideOffset = 0;
@@ -725,6 +726,7 @@ export const getTrackLeft = spec => {
     targetSlideIndex = slideIndex + getPreClones(spec);
     targetSlide = trackElem && trackElem.childNodes[targetSlideIndex];
     targetLeft = targetSlide ? targetSlide.offsetLeft * -1 : 0;
+
     if (centerMode === true) {
       targetSlideIndex = infinite
         ? slideIndex + getPreClones(spec)
@@ -739,6 +741,13 @@ export const getTrackLeft = spec => {
       }
       targetLeft -= parseInt(spec.centerPadding);
       targetLeft += targetSlide && (listWidth - targetSlide.offsetWidth) / 2;
+    } else if (outerEdgeLimit === true) {
+      let lastElementWidth =
+        trackElem.childNodes[trackElem.childNodes.length - 1].offsetWidth;
+      let lastLeft =
+        trackElem.childNodes[trackElem.childNodes.length - 1].offsetLeft * -1;
+      let outerEdgeLimit = lastLeft - lastElementWidth + slideWidth;
+      targetLeft = Math.min(Math.max(targetLeft, outerEdgeLimit), 0);
     }
   }
 
