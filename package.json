@@ -1,6 +1,6 @@
 {
-  "name": "react-slick",
-  "version": "0.23.1",
+  "name": "bob-react-slick",
+  "version": "0.1.0",
   "description": " React port of slick carousel",
   "main": "./lib",
   "files": ["dist", "lib"],
@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/akiran/react-slick"
+    "url": "https://github.com/bagonboard/react-slick"
   },
   "keywords": [
     "slick",
@@ -108,9 +108,9 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/akiran/react-slick/issues"
+    "url": "https://github.com/bagonboard/react-slick/issues"
   },
-  "homepage": "https://github.com/akiran/react-slick",
+  "homepage": "https://github.com/bagonboard/react-slick",
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/react-slick",
